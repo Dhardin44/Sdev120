@@ -1,0 +1,48 @@
+// This pseudocode is intended to display
+// employee net pay values. All employees have a standard
+// $45 deduction from their checks.
+// If an employee does not earn enough to cover the deduction
+// an error message is displayed.
+// This example is modularized.
+start
+   declarations
+      string name
+      string EOFNAME = "ZZZZ"
+   housekeeping()
+   while name <> EOFNAME
+      mainLoop()
+   endwhile
+   finish()
+stop
+
+housekeeping()
+   output "Enter first name or ", EOFNAME, " to quit "
+   input name
+return
+
+mainLoop()
+   declarations
+      num hours
+      num rate
+      num DEDUCTION = 45
+      num gross
+      num net
+   output "Enter hours worked for ", name
+   input hours
+   output "Enter hourly rate for ", name
+   input rate
+   gross = hours * rate
+   net = gross - DEDUCTION
+   if net > 0 then
+      output "Net pay for ", name, " is ", net
+   else
+      output "Deductions not covered. Net is 0."
+   endif
+   output "Enter next name or ", EOFNAME, " to quit "
+   input name
+return
+
+finish()
+   output "End of job"
+return
+
